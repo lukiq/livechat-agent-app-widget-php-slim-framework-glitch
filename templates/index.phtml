@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdn.livechatinc.com/boilerplate/1.1.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//cdn.livechatinc.com/boilerplate/1.1.js"></script>
+    
+    <!-- import the webpage's javascript file -->
+    <script>
+      /* If you're feeling fancy you can add interactivity 
+          to your site with Javascript */
+
+      // prints "hi" in the browser's dev tools console
+      console.log('hi');
+
+      LiveChat.init();
+
+      LiveChat.on("customer_profile", function( data ) {
+        console.log( data );
+        var $profile = $('#profile-data');
+        $profile.append("<p>CustomerID: " + data.id + "</p>");
+        $profile.append("<p>Name: " + data.name + "</p>");
+        $profile.append("<p>Panel: " + data.source + "</p>");
+      })
+    </script>
+    <style>
+    </style>
+    
+  </head>  
+  <body>
+    <h1>
+      Hi there! 
+    </h1>
+      <p>Let's see some visitor details</p>
+    <div id="profile-data">
+      
+    </div>
+    
+  </body>
+</html>
